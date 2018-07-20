@@ -1,4 +1,4 @@
-FROM coldljy/centos-java
+FROM coldljy/centos-java:jre8
 
 ARG FLUME_VERSION="1.8.0"
 ARG APACHE_MIRROR="https://dist.apache.org/repos/dist/release"
