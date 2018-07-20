@@ -23,6 +23,7 @@ RUN set -x \
 
 	# Install envsubst for dynamic config file
 
+RUN yum -y install gettext
 
 EXPOSE 41414
 WORKDIR ${DIR}
