@@ -27,7 +27,7 @@ case "$1" in
 			*) ARGS="$ARGS -Dflume.root.logger=$FLUME_LOGGER" ;;
 		esac
 
-		cat $FLUME_CONF_FILE | envsubst > "$FLUME_CONF_FILE.local"
+		cat $FLUME_CONF_FILE | envsubst '$URL $REDIS_HOST $REDIS_PORT $DB_HOST $DB_PORT $DB_USER $DB_PASSWORD $DB_URL' > "$FLUME_CONF_FILE.local"
 
 		ARGS="-c $FLUME_CONF_DIR -n $AGENT $ARGS"
 		$_FLUME_NG agent -f $FLUME_CONF_FILE.local $ARGS
